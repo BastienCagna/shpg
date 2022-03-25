@@ -1,1 +1,6 @@
 *.egg*/
+.vscode/
+*__pycache__*
+
+doc/_build/
+doc/auto_examples/

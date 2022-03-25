@@ -1,4 +1,12 @@
-import html_report as html
+"""
+.. _page:
+
+===========================================================================================
+Render a single page containing a Matplotlib figure and a custom reprensentation of dataset
+===========================================================================================
+"""
+
+import shpg
 import matplotlib
 matplotlib.use('Qt5Agg')
 import matplotlib.pyplot as plt
@@ -17,9 +25,9 @@ ax.legend()
 fig_path = "/tmp/html_report_fig.png"
 fig.savefig(fig_path)
 
-plot_section = html.Section(
-    html.Heading2("Random result figure"),
-    fig_path    # Image will be automatically detected, could also create html.Image object
+plot_section = shpg.Section(
+    shpg.Heading2("Random result figure"),
+    fig_path    # Image will be automatically detected, could also create shpg.Image object
 )
 
 # Create fake data
@@ -33,26 +41,26 @@ subjects = [
 ]
 
 # Create a custom display to print each sample of the fake data
-class SubjectSection(html.Section):
+class SubjectSection(shpg.Section):
     def __init__(self, subject: dict) -> None:
         super().__init__()
         # Start with the name of the subject has header
-        self.append(html.Heading3(subject['name']))
+        self.append(shpg.Heading3(subject['name']))
         # Add a table that show some properties of the subject
-        self.append(html.DictVTable(
+        self.append(shpg.SimpleDictVTable(
             {'Age': subject['age'], 'Cortical volume': subject['volume']}))
         # Add an image of the subject
-        # self.add(html.Image(subject['image']))
+        # self.add(shpg.Image(subject['image']))
 
-subjects_section = html.Section(html.Heading2("Subjects"))
+subjects_section = shpg.Section(shpg.Heading2("Subjects"))
 for sub in subjects:
     subjects_section.append(SubjectSection(sub))
 
 
 # Create the HTML Page
-page = html.Page(title="HTML Report Example")
-page.content.append(html.Heading1("HTML Report Example"))
-page.content.append(html.Paragraph('This is an example to show some features of the package. <a href="https://fr.wikipedia.org/wiki/NeuroSpin">Here is a link to go somewhere</a>'))
+page = shpg.Page(title="HTML Report Example")
+page.content.append(shpg.Heading1("HTML Report Example"))
+page.content.append(shpg.Paragraph('This is an example to show some features of the package. <a href="https://fr.wikipedia.org/wiki/NeuroSpin">Here is a link to go somewhere</a>'))
 page.content.append(plot_section)
 page.content.append(subjects_section)
 
