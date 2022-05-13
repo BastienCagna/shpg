@@ -30,12 +30,21 @@ class HTMLTag(HTMLProvider):
         if isinstance(child, HTMLProvider):
             self.children.append(child)
         elif isinstance(child, str):
-            if op.exists(child) and imghdr.what(child):
-                self.children.append(Image(child))
+            if op.exists(child):
+                try:
+                    imgtype = imghdr.what(child)
+                except IsADirectoryError:
+                    imgtype = None
+                if imgtype:
+                    self.children.append(Image(child))
             else:
                 self.children.append(child)
         else:
             raise ValueError("Invalid child.")
+
+    def extend(self, children):
+        for child in children:
+            self.children.append(child)
 
     def inner_html(self) -> str:
         if self.orphan:
@@ -83,12 +92,12 @@ class Heading6(HTMLTag):
         super().__init__('h6', [text])
 
 class Paragraph(HTMLTag):
-    def __init__(self, text: str) -> None:
-        super().__init__('p', [text])
+    def __init__(self, *children) -> None:
+        super().__init__('p', children)
 
 class Link(HTMLTag):
-    def __init__(self, url: str) -> None:
-        super().__init__('a')
+    def __init__(self, url: str, title=None) -> None:
+        super().__init__('a', [title if title else url])
         self.attributes['href'] = url
 
 class Image(HTMLTag):

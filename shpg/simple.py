@@ -1,5 +1,6 @@
 from .html import *
-from .page import create_tmp_tag, TempTagType
+from .page import create_tmp_tag, TempTagType, Page, StyleSheets
+import typing
 
 
 class SimpleHeader(Div):
@@ -19,8 +20,6 @@ class SimpleFooter(Div):
         if links_dict:
             self.append(SimpleSiteMap(links_dict))
         self.append(Paragraph('Generated with <a target="_blank" href="https://github.com/BastienCagna/shpg">Static HTML Page Generator</a>.'))
-
-
 
 class SimpleDictVTable(HTMLTag):
     def __init__(self, data: str) -> None:
@@ -74,4 +73,19 @@ class SimpleSiteMap(Div):
             else:
                 html += links.to_html()
             html += "</div>"
+        return html
+
+class SimplePage(Page):
+    def __init__(self, title: str = ..., stylesheet: 'str|StyleSheets' = ...) -> None:
+        super().__init__(title, stylesheet)
+        self.content = Div()
+        self.content.attributes['class'] = "simple-maincontent"
+        self.header = SimpleHeader(title=title)
+        self.footer = SimpleFooter()
+
+    def to_html(self, data: dict = ...) -> str:
+        memo = self.content
+        self.content = [self.header, self.content, self.footer]
+        html = super().to_html(data)
+        self.content = memo
         return html

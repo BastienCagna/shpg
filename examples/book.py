@@ -53,4 +53,4 @@ subpage.content.append(footer)
 ###############################################################################
 # Render
 ###############################################################################
-book.save("/tmp/example_book.html", portable=False)
+book.save("/tmp/example_book", portable=False)

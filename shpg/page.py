@@ -2,7 +2,7 @@ from enum import Enum
 import os.path as op
 from os import makedirs
 import shutil
-import typing
+from typing import List
 from uuid import uuid4
 from os import listdir
 import json
@@ -16,7 +16,7 @@ PAGES_DIRNAME = "pages"
 DEFAULT_TITLE = "Untitled page"
 
 
-def find_urls(html: str, attributes=['src', 'href']) -> list[str]:
+def find_urls(html: str, attributes=['src', 'href']) -> List[str]:
     urls = []
     for attr in attributes:
         parts = html.split(attr + '=')
@@ -31,7 +31,7 @@ def find_urls(html: str, attributes=['src', 'href']) -> list[str]:
     return urls
 
 
-def find_content_urls(string: str) -> list[str]:
+def find_content_urls(string: str) -> List[str]:
     #return list(filter(lambda url: op.splitext(url)[1] in valid_ext, find_urls(string)))
     results = []
     for url in find_urls(string):
@@ -58,7 +58,7 @@ def make_script_portable(html:str, abs_target_path: str, rel_target_path: str) -
             new_abs_path = op.join(abs_target_path, fname)
             new_rel_path = op.join(rel_target_path, fname)
 
-            if op.exists(f):
+            if op.isfile(f) and op.exists(f):
                 shutil.copy(f, new_abs_path)
 
             # Then, replace filename occurance in the html script
@@ -87,7 +87,7 @@ def create_tmp_tag(type:TempTagType, **data):
     return "{}{}{}".format(TEMP_TAG_START_DELIMITER, data_str, TEMP_TAG_END_DELIMITER)
 
 
-def generate_tag(serialized_tmp_tag:str, items:list[HTMLProvider]) -> str:
+def generate_tag(serialized_tmp_tag:str, items:List[HTMLProvider]) -> str:
     data = json.loads(serialized_tmp_tag.split(TEMP_TAG_START_DELIMITER)[-1])
     t = TempTagType(data['_tag_type'])
 
@@ -105,7 +105,7 @@ def generate_tag(serialized_tmp_tag:str, items:list[HTMLProvider]) -> str:
         return '<a href="{}">{}</a>'.format(link, data['label'])
     raise NotImplementedError("Unknown tak type or not implemented decoding.")
 
-def _decode_first_temporary_tag(html: str, items: list[HTMLProvider]) -> str:
+def _decode_first_temporary_tag(html: str, items: List[HTMLProvider]) -> str:
     parts = html.split(TEMP_TAG_END_DELIMITER)
     if len(parts) > 1:
         ppart = parts[0].split(TEMP_TAG_START_DELIMITER)
@@ -118,14 +118,14 @@ def _decode_first_temporary_tag(html: str, items: list[HTMLProvider]) -> str:
     return None
 
 
-def decode_tmp_tags(html: str, items: list[HTMLProvider]) -> str:
+def decode_tmp_tags(html: str, items: List[HTMLProvider]) -> str:
     new_html = _decode_first_temporary_tag(html, items)
     while new_html:
         html = new_html
         new_html = _decode_first_temporary_tag(html, items)
     return html
 
-def get_chidrens_tags(tag:HTMLTag) -> list[HTMLTag]:
+def get_chidrens_tags(tag:HTMLTag) -> List[HTMLTag]:
     if isinstance(tag, HTMLTag):
         tags = [tag]
         for t in tag.children:
@@ -179,7 +179,7 @@ class Page(HTMLProvider):
         #     self.path_from_root = relpath(filename, op.abspath(op.split(root)[0]))
         #     self.path_to_root = relpath(root, op.abspath(op.split(filename)[0]))
 
-    def save(self, filename: str=None, portable = False, index_dir:str=None, items:list[HTMLProvider]=None):
+    def save(self, filename: str=None, portable = False, index_dir:str=None, items:List[HTMLProvider]=None):
         if filename:
             self.filename = filename
         html = self.to_html()
@@ -208,7 +208,8 @@ class Book:
         self.index = Page(title, stylesheet)
         self.pages: list[Page] = []
 
-    def save(self, filename: str, portable = False, index_dir:str=None):
+    def save(self, path: str, portable = False, index_dir:str=None):
+        filename = op.join(path, "index.html")
         parent_dir, fname = op.split(filename)
         if not index_dir:
             index_dir = create_index_dir(fname, parent_dir)
