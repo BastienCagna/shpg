@@ -3,14 +3,16 @@ import os.path as op
 from os import makedirs
 import shutil
 import typing
-from uuid import uuid4
 from os import listdir
 import json
 
-from .html import HTMLProvider, HTMLTag, Div
+from attr import attr, attributes
+
+from .html import HTMLProvider, Div, HTMLTag, get_chidrens_tags, generate_html_tag
 
 
-INDEX_DIR_SUFFIX = "_index"
+INDEX_DIRNAME = "index"
+INDEX_FILENAME = "index.html"
 CONTENT_DIRNAME = "content"
 PAGES_DIRNAME = "pages"
 DEFAULT_TITLE = "Untitled page"
@@ -66,14 +68,12 @@ def make_script_portable(html:str, abs_target_path: str, rel_target_path: str) -
         
     return html
 
-def create_index_dir(fname: str, parent_dir:str):
-    fbasename, _ = op.splitext(fname)
-    index_dir = op.join(parent_dir, fbasename + INDEX_DIR_SUFFIX)
+def create_index_dir(parent_dir:str):
+    index_dir = op.join(parent_dir, INDEX_DIRNAME)
     if op.exists(index_dir):
         shutil.rmtree(index_dir)
     makedirs(index_dir, exist_ok=True)
     return index_dir
-
 
 TEMP_TAG_START_DELIMITER = "$[$"
 TEMP_TAG_END_DELIMITER = "$]$"
@@ -102,7 +102,7 @@ def generate_tag(serialized_tmp_tag:str, items:list[HTMLProvider]) -> str:
                 break
         if not link:
             raise ValueError("Cannot find item {}".format(data['id']))
-        return '<a href="{}">{}</a>'.format(link, data['label'])
+        return generate_html_tag('a', data['label'], href=link)
     raise NotImplementedError("Unknown tak type or not implemented decoding.")
 
 def _decode_first_temporary_tag(html: str, items: list[HTMLProvider]) -> str:
@@ -125,42 +125,56 @@ def decode_tmp_tags(html: str, items: list[HTMLProvider]) -> str:
         new_html = _decode_first_temporary_tag(html, items)
     return html
 
-def get_chidrens_tags(tag:HTMLTag) -> list[HTMLTag]:
-    if isinstance(tag, HTMLTag):
-        tags = [tag]
-        for t in tag.children:
-            tags.extend(get_chidrens_tags(t))
-        return tags
-    return []
-
 class StyleSheets(Enum):
     DEFAULT = 'default.css'
 
+
+def fill_slots(element, slot_id, tag):
+    if isinstance(element, (list, tuple)):
+        new_elements = []
+        for e in element:
+            new_elements.append(fill_slots(e, slot_id, tag))
+        return new_elements
+    elif isinstance(element, HTMLProvider):
+        element.fill_slots(slot_id, tag)
+    return element
+
 class Page(HTMLProvider):
-    def __init__(self, title: str = DEFAULT_TITLE, stylesheet:'str|StyleSheets'=StyleSheets.DEFAULT) -> None:
+    def __init__(self, title: str = DEFAULT_TITLE, content=None, blocks={},
+                 stylesheet:'str|StyleSheets|list'=StyleSheets.DEFAULT) -> None:
         super().__init__()
         self.title = title
-        self.content = Div()
-        self.content.attributes['class'] = "page"
+        if content:
+            self.content = content
+        else:
+            self.content = Div([], classname="page")
         self.stylesheet = stylesheet
+        self.blocks = blocks
 
         # self.path_from_root = None
         # self.path_to_root = None
         self.filename = None
 
-    def link(self, label:str) -> str:
-        return create_tmp_tag(TempTagType.LINK, id=self.id, label=label)
+    def link(self, label:str, **attributes) -> str:
+        return create_tmp_tag(TempTagType.LINK, id=self.id, label=label, **attributes)
 
     def to_html(self, data: dict = {}) -> str:
-        if isinstance(self.stylesheet, StyleSheets):
-            style_url = op.realpath(op.join(op.split(__file__)[0], '..', 'style', self.stylesheet.value))
-        else:
-            if not op.exists(self.stylesheet):
-                raise IOError("Cannot find custom stylesheet: {}".format(self.stylesheet))
-            style_url = self.stylesheet
+        self.stylesheet = [self.stylesheet] if not isinstance(self.stylesheet, (tuple, list)) else self.stylesheet
+        style_html = ""
+        for sheet in self.stylesheet:
+            if isinstance(sheet, StyleSheets):
+                style_html += '<link rel="stylesheet" href="{}">'.format(op.realpath(op.join(op.split(__file__)[0], '..', 'style', sheet.value)))
+            else:
+                if not op.exists(sheet):
+                    raise IOError("Cannot find custom stylesheet: {}".format(sheet))
+                style_html += '<link rel="stylesheet" href="{}">'.format(sheet)
 
-        body = self.content.to_html()
-        html = '<html><head><title>{}</title><link rel="stylesheet" href="{}"></head><body>{}</body>'.format(self.title, style_url, body)
+        if isinstance(self.content, list):
+            body = Div(*self.content, classname="page").to_html()
+        else:
+            body = self.content.to_html()
+
+        html = '<html><head><title>{}</title>{}</head><body>{}</body>'.format(self.title, style_html, body)
         # TODO: process template to input data
         return html
 
@@ -179,9 +193,25 @@ class Page(HTMLProvider):
         #     self.path_from_root = relpath(filename, op.abspath(op.split(root)[0]))
         #     self.path_to_root = relpath(root, op.abspath(op.split(filename)[0]))
 
-    def save(self, filename: str=None, portable = False, index_dir:str=None, items:list[HTMLProvider]=None):
+    def save(self, filename: str=None, portable = False, index_dir:str=None, items:list[HTMLProvider]=None,
+             blocks={}):
         if filename:
             self.filename = filename
+
+        # Replace HTMLSlots if HTMLProviders are specified
+        if len(blocks):
+            tmp_blocks = self.blocks
+            for id, tag in blocks.items():
+                tmp_blocks[id] = tag
+            blocks = tmp_blocks
+        else:
+            blocks = self.blocks                
+        for slot_id, tag in self.blocks.items():
+            self.content = fill_slots(self.content, slot_id, tag)
+            # for element in self.content:
+            #     element.fill_slots(slot_id, tag)
+
+        # Generate HTML script
         html = self.to_html()
 
         # Decode temporary tags
@@ -202,16 +232,21 @@ class Page(HTMLProvider):
 
 
 class Book:
-    def __init__(self, title: str = DEFAULT_TITLE, stylesheet:'str|StyleSheets'=StyleSheets.DEFAULT) -> None:
+    def __init__(self, title: str = DEFAULT_TITLE, index=None, pages=[], 
+                 header=None, footer=None, blocks={},
+                 stylesheet:'str|StyleSheets|list'=StyleSheets.DEFAULT) -> None:
         self.title = title
         self.stylesheet = stylesheet
-        self.index = Page(title, stylesheet)
-        self.pages: list[Page] = []
+        self.index = index if index else Page(title, stylesheet=stylesheet)
+        self.pages: list[Page] = pages
+        # TODO: if not None, use header and footer for each page when saving
+        self.header = header
+        self.footer = footer
+        self.blocks = blocks
 
-    def save(self, filename: str, portable = False, index_dir:str=None):
-        parent_dir, fname = op.split(filename)
+    def save(self, path: str, portable = False, index_dir:str=None):
         if not index_dir:
-            index_dir = create_index_dir(fname, parent_dir)
+            index_dir = create_index_dir(path)
         content_dir = op.join(index_dir, CONTENT_DIRNAME)
         makedirs(content_dir)
         pages_dir = op.join(index_dir, PAGES_DIRNAME)
@@ -222,8 +257,36 @@ class Book:
             page.filename = op.join(pages_dir, page.title.replace(' ', '_') + ".html")
             items.append(page)
             items.extend(get_chidrens_tags(page.content))
-        self.index.filename = filename
+        self.index.filename = op.join(path, INDEX_FILENAME)
 
         for page in self.pages:
-            page.save(page.filename, portable, index_dir, items)
-        self.index.save(self.index.filename, portable, index_dir, items)
+            # page.save(page.filename, portable, index_dir, items, self.blocks)
+            self._save_page(page, page.filename, portable, index_dir, items)
+        self._save_page(self.index, self.index.filename, portable, index_dir, items)
+        # self.index.save(self.index.filename, portable, index_dir, items, self.blocks)
+
+    def _save_page(self, page: Page, filename: str, portable:bool, index_dir:str, items:list):
+        memo = page.content
+        page.content = []
+        if self.header:
+            page.content.append(self.header)
+        page.content.append(memo)
+        if self.footer:
+            page.content.append(self.footer)
+        page.save(filename, portable, index_dir, items, self.blocks)
+        page.content = memo
+
+
+
+class LinkToPage(HTMLTag):
+    def __init__(self, page:Page, text:str, **attributes) -> None:
+        super().__init__('a')
+        self.text = text
+        self.page = page
+        self.attributes = attributes
+    
+    # def inner_html(self) -> str:
+    #     return self.page.link(self.text, **attributes)
+
+    def to_html(self) -> str:
+        return self.page.link(self.text, **self.attributes)

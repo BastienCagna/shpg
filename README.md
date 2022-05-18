@@ -26,4 +26,4 @@ page.save(report_path, portable=True)
 ```
 
 ### Documentation
-No documentation is available for now.
+The auto-generated online documentation is hosted at [https://bastiencagna.github.io/shpg/](https://bastiencagna.github.io/shpg).

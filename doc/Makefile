@@ -22,7 +22,7 @@ help:
 
 
 install:
-	rm -rf _build/doctrees _build/shpg.github.io
+	rm -rf _build
 	# first clone the BastienCagna/shpg.github.io repo because it may ask
 	# for password and we don't want to delay this long build in
 	# the middle of it
@@ -30,7 +30,7 @@ install:
 	# --depth 1 is a speed optimization since we don't need the
 	# history prior to the last commit
 	# -b gh-pages fetches only the branch for the gh-pages
-	git clone -b gh-pages --single-branch --no-checkout --depth 1 git@github.com:BastienCagna/shpg.git _build/shpg.github.io
+	git clone -b gh-pages --single-branch --no-checkout --depth 1 https://github.com/BastienCagna/shpg.git _build/shpg.github.io
 	touch _build/shpg.github.io/.nojekyll
 	sphinx-apidoc -o . ../shpg
 	make html
@@ -39,5 +39,5 @@ install:
 	cd shpg.github.io && \
 	git add * && \
 	git add .nojekyll && \
-	git commit -a -m 'Make install' && \
+	git commit -a -m 'Make install' 
 	git push
