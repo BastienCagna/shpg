@@ -1,5 +1,6 @@
 import os.path as op
 import typing
+from typing import List
 import imghdr
 from uuid import uuid4
 
@@ -7,33 +8,36 @@ from uuid import uuid4
 class HTMLProvider:
     """The most basic class which provide an id and to_html() method
     """
-    def __init__(self, id:str=None) -> None:
+
+    def __init__(self, id: str = None) -> None:
         self.id = id or uuid4().hex[-8:]
 
     def to_html(self) -> str:
         raise NotImplementedError()
 
+
 class HTMLSlot(HTMLProvider):
-    def __init__(self, id:str=None) -> None:
+    def __init__(self, id: str = None) -> None:
         super().__init__(id)
 
     def to_html(self) -> str:
         """Return empty string as an unused slot is kind of ghost"""
         return ""
 
-def generate_html_tag(tagname, inner:str=None, **attributes) -> str:
+
+def generate_html_tag(tagname, inner: str = None, **attributes) -> str:
     """ Return HTML script for the asked tag
-    
+
     Paramaters
     ----------
     tagname: str
         HTML tag name.
-    
+
     inner: str, default=None
         Inner HTML. The HTML script or text that is in the tag.
-    
+
     attributes: dict
-        HTML tag attributes. To specify class attribute use "classename" key 
+        HTML tag attributes. To specify class attribute use "classename" key
         instead as class is a reserved work in python.
 
     Return
@@ -49,11 +53,12 @@ def generate_html_tag(tagname, inner:str=None, **attributes) -> str:
         return '<{} {}>{}</{}>'.format(tagname, attributes_str, inner, tagname)
     else:
         return '<{} {} />'.format(tagname, attributes_str)
-    
+
+
 def to_html(element) -> str:
     """ Return the HTML version of any object
-    
-    If object is not a HTMLProvider or an str, it use the str() function to 
+
+    If object is not a HTMLProvider or an str, it use the str() function to
     provide the HTML content.
 
     Paramaters
@@ -72,6 +77,7 @@ def to_html(element) -> str:
     else:
         return str(element)
 
+
 class HTMLTag(HTMLProvider):
     """ Basic class for all the HTML tags.
     Read more in the :ref:`User Guide <htmltag>`.
@@ -83,12 +89,13 @@ class HTMLTag(HTMLProvider):
     children : list of any
         The HTML tags or HTMLisable object contained by this tag.
     attributes : dict
-        HTML tag attributes. To specify class attribute use "classename" key 
+        HTML tag attributes. To specify class attribute use "classename" key
         instead as class is a reserved work in python.
     orphan : bool, default=False
         When True, the tag has no innetr content. The tag will be like <.... />
     """
-    def __init__(self, tagname: str, *children: 'list[HTMLTag]', orphan=False, **attributes) -> None:
+
+    def __init__(self, tagname: str, *children: 'List[HTMLTag]', orphan=False, **attributes) -> None:
         super().__init__(id=tagname + "_" + uuid4().hex[-8:])
         self.tagname = tagname
         self.attributes = attributes
@@ -100,11 +107,12 @@ class HTMLTag(HTMLProvider):
                 if isinstance(child, (tuple, list)):
                     child = Div(*child)
                 self.append(child)
-                
+
     def append(self, child: 'HTMLTag') -> None:
         """Add child element."""
         if self.orphan:
-            raise RuntimeError("Cannot add item to {} as it is an orphan tag".format(self.tagname))
+            raise RuntimeError(
+                "Cannot add item to {} as it is an orphan tag".format(self.tagname))
         if isinstance(child, HTMLProvider):
             self.children.append(child)
         elif isinstance(child, str):
@@ -141,53 +149,114 @@ class HTMLTag(HTMLProvider):
                     self.children[ic] = tag
                 elif isinstance(child, HTMLTag):
                     child.fill_slots(id, tag)
-        
-    
-def get_chidrens_tags(tag:HTMLTag) -> list[HTMLTag]:
+
+
+def get_chidrens_tags(tag: HTMLTag) -> List[HTMLTag]:
     """Return all the children of a tag as a single 1D list of HTMLTag."""
     if isinstance(tag, HTMLTag):
         tags = [tag]
         for t in tag.children:
             tags.extend(get_chidrens_tags(t))
         return tags
-    return []    
+    return []
 
 
+# Basic HTML tags
 class Heading1(HTMLTag):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__('h1', text, **attributes)
+
+
+class H1(Heading1):
+    def __init__(self, text: str, **attributes) -> None:
+        super().__init__(text, **attributes)
+
+
 class Heading2(HTMLTag):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__('h2', text, **attributes)
+
+
+class H2(Heading2):
+    def __init__(self, text: str, **attributes) -> None:
+        super().__init__(text, **attributes)
+
+
 class Heading3(HTMLTag):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__('h3', text, **attributes)
+
+
+class H3(Heading3):
+    def __init__(self, text: str, **attributes) -> None:
+        super().__init__(text, **attributes)
+
+
 class Heading4(HTMLTag):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__('h4', text, **attributes)
+
+
+class H4(Heading4):
+    def __init__(self, text: str, **attributes) -> None:
+        super().__init__(text, **attributes)
+
+
 class Heading5(HTMLTag):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__('h5', text, **attributes)
+
+
+class H5(Heading5):
+    def __init__(self, text: str, **attributes) -> None:
+        super().__init__(text, **attributes)
+
+
 class Heading6(HTMLTag):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__('h6', text, **attributes)
+
+
+class H6(Heading6):
+    def __init__(self, text: str, **attributes) -> None:
+        super().__init__(text, **attributes)
+
 
 class Paragraph(HTMLTag):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__('p', text, **attributes)
 
+
+class P(Paragraph):
+    def __init__(self, text: str, **attributes) -> None:
+        super().__init__(text, **attributes)
+
+
 class Link(HTMLTag):
-    def __init__(self, url: str, text:str, **attributes) -> None:
+    def __init__(self, url: str, text: str, **attributes) -> None:
         super().__init__('a', text, **attributes)
         self.attributes['href'] = url
+
+
+class A(Link):
+    def __init__(self, url: str, text: str, **attributes) -> None:
+        super().__init__(url, text, **attributes)
+
 
 class Image(HTMLTag):
     def __init__(self, img_path: str, **attributes) -> None:
         super().__init__('img', src=img_path, **attributes, orphan=True)
 
+
+class Img(Image):
+    def __init__(self, img_path: str, **attributes) -> None:
+        super().__init__(img_path, **attributes)
+
+
 class Div(HTMLTag):
     def __init__(self, *children, **attributes) -> None:
         super().__init__('div', *children, **attributes)
+
 
 class Section(HTMLTag):
     def __init__(self, *children, **attributes) -> None:
@@ -199,23 +268,16 @@ class Table(HTMLTag):
         super().__init__("table", **attributes)
         self.data = data or []
         self.names = names
-        # self.children = names.copy() or []
-        # if isinstance(self.data, dict):
-        #     for k, dt in data.items():
-        #         self.children.append(k)
-        #         self.children.extend(dt)
-        # elif data:
-        #     for dt in data:
-        #         self.children.extend(dt)
 
     def append(self, row):
         if isinstance(self.data, dict):
-            raise ValueError("Table has no append() method when using dict data.")
+            raise ValueError(
+                "Table has no append() method when using dict data.")
         if not len(self.data) or (len(self.data) and len(row) == len(self.data[0])):
             self.data.append(row)
-            # self.children.extend(row)
         else:
-            raise ValueError("Cannot add row of length {} to data array of width {}.".format(len(row), len(self.data[0])))
+            raise ValueError("Cannot add row of length {} to data array of width {}.".format(
+                len(row), len(self.data[0])))
 
     def inner_html(self) -> str:
         if isinstance(self.data, dict):
@@ -276,10 +338,12 @@ class Table(HTMLTag):
                             self.data[k][ic] = tag
                         elif isinstance(child, HTMLTag):
                             child.fill_slots(id, tag)
-    
+
+
 class ListItem(HTMLTag):
     def __init__(self, *children, **attributes) -> None:
         super().__init__('li', *children, **attributes)
+
 
 class List(HTMLTag):
     def __init__(self, *children, **attributes) -> None:
@@ -294,12 +358,13 @@ class List(HTMLTag):
 
     def append(self, child):
         if not isinstance(child, ListItem):
-            raise ValueError("Only ListItem could be added to List. {} given.".format(type(child)))
+            raise ValueError(
+                "Only ListItem could be added to List. {} given.".format(type(child)))
         return super().append(child)
 
     def extend(self, children):
         for child in children:
             if not isinstance(child, ListItem):
-                raise ValueError("Only ListItem could be added to List. {} given.".format(type(child)))
+                raise ValueError(
+                    "Only ListItem could be added to List. {} given.".format(type(child)))
         return super().extend(children)
-    

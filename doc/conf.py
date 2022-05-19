@@ -37,7 +37,7 @@ extensions = [
     'sphinx.ext.doctest',
     # 'nbsphinx',
     'sphinx_gallery.gen_gallery',
-    # 'sphinxcontrib.fulltoc'
+    # 'sphinxcontrib.fulltoc',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -78,9 +78,10 @@ html_theme_options = {
     # 'includehidden': True,
     # 'titles_only': False
     'navbar_links': [
-        ("Gallery", "auto_examples/index"),
-        # ("API", "api"),
-        # ("Tutorial", "tutorial"),
+        ("Get started", "index"),
+        ("Tutorial", "tutorial"),
+        ("Examples", "auto_examples/index"),
+        ("Reference", "reference"),
         # ("Installation", "install"),
         ("Github", "https://github.com/BastienCagna/shpg", True),
     ]
@@ -96,7 +97,6 @@ html_static_path = ['_static']
 
 # https://sphinx-gallery.github.io/stable/getting_started.html
 sphinx_gallery_conf = {
-     'examples_dirs': '../examples',   # path to your example scripts
-     'gallery_dirs': 'auto_examples',  # path to where to save gallery generated output
+    'examples_dirs': '../examples',   # path to your example scripts
+    'gallery_dirs': 'auto_examples',  # path to where to save gallery generated output
 }
-

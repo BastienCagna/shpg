@@ -37,7 +37,8 @@ footer = shpg.SimpleFooter("Example footer", {'Site:': links})
 book.index.title = 'Example website | Home'
 book.index.content.append(header)
 book.index.content.append(shpg.Heading2("Welcome Home!"))
-book.index.content.append(shpg.Paragraph("Follow this link to go to " + subpage.link("sub page")))
+book.index.content.append(shpg.Paragraph(
+    "Follow this link to go to " + subpage.link("sub page")))
 book.index.content.append(footer)
 
 
