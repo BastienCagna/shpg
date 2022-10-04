@@ -18,6 +18,7 @@ SHPG is avaialable on PyPI. You can then install it simply by executing the pip 
     pip install shpg
 
 If you want to contribute to development or customize the package:
+
 .. code-block:: shell
 
     git clone https://github.com/BastienCagna/shpg.git
