@@ -11,17 +11,20 @@ Static HTML Page Generator
 Installation
 -------------
 
-for now shpg is available through GitHub. You can install by cloning the project and renning setup.py:
+SHPG is avaialable on PyPI. You can then install it simply by executing the pip command:
 
+.. code-block:: shell
 
+    pip install shpg
+
+If you want to contribute to development or customize the package:
 .. code-block:: shell
 
     git clone https://github.com/BastienCagna/shpg.git
     cd shpg
-    python setup.py install
-
-N.B: replace "install" by "develop" if you want to contribute to development or customize the package.
-N.B2: use --user to install the package only for you (might be mandatory depending of the rights you have)
+    python setup.py develop
+    
+N.B: use --user to install the package only for you (might be mandatory depending of the rights you have)
 
 Basic example
 -------------
