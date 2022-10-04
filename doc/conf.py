@@ -1,5 +1,6 @@
 
 import sphinx_bootstrap_theme
+from os import system
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -35,9 +36,8 @@ extensions = [
     'numpydoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.doctest',
-    # 'nbsphinx',
     'sphinx_gallery.gen_gallery',
-    # 'sphinxcontrib.fulltoc',
+    'sphinx_design',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -54,38 +54,61 @@ source_suffix = ['.rst', '.md']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-
+# Create favicon.ico from logo.png
+system('convert logo.png -define icon:auto-resize=256,64,48,32,16 favicon.ico')
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'bootstrap'
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+html_theme = 'furo'
+html_favicon = 'favicon.ico'
+html_logo = 'logo.png'
+html_title = "Static HTML Page Generator"
+html_short_tile = "SHPG"
+
 html_theme_options = {
-    'navbar_title': 'Static HTML Page Generator',
-    'bootswatch_theme': "flatly",
-    'navbar_sidebarrel': False,
-    'bootstrap_version': "3",
-    # 'logo_only': False,
-    # 'prev_next_buttons_location': 'bottom',
-    # 'style_external_links': False,
-    # 'vcs_pageview_mode': '',
-    # 'style_nav_header_background': 'white',
-    # # Toc options
-    # 'collapse_navigation': True,
-    # 'sticky_navigation': True,
-    # 'includehidden': True,
-    # 'titles_only': False
-    'navbar_links': [
-        ("Get started", "index"),
-        ("Tutorial", "tutorial"),
-        ("Examples", "auto_examples/index"),
-        ("Reference", "reference"),
-        # ("Installation", "install"),
-        ("Github", "https://github.com/BastienCagna/shpg", True),
-    ]
+    "sidebar_hide_name": True,
+    "navigation_with_keys": True,
 }
+
+# If false, no module index is generated.
+html_use_modindex = False
+
+# If false, no index is generated.
+html_use_index = False
+
+# If true, links to the reST sources are added to the pages.
+html_show_sourcelink = False
+
+
+# html_theme = 'bootstrap'
+# html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+# html_theme_options = {
+#     'navbar_title': 'Static HTML Page Generator',
+#     'bootswatch_theme': "flatly",
+#     'navbar_sidebarrel': False,
+#     'bootstrap_version': "3",
+#     # 'logo_only': False,
+#     # 'prev_next_buttons_location': 'bottom',
+#     # 'style_external_links': False,
+#     # 'vcs_pageview_mode': '',
+#     # 'style_nav_header_background': 'white',
+#     # # Toc options
+#     # 'collapse_navigation': True,
+#     # 'sticky_navigation': True,
+#     # 'includehidden': True,
+#     # 'titles_only': False
+#     'navbar_links': [
+#         ("Get started", "index"),
+#         ("Tutorial", "tutorial"),
+#         ("Examples", "auto_examples/index"),
+#         ("Reference", "reference"),
+#         # ("Installation", "install"),
+#         ("Github", "https://github.com/BastienCagna/shpg", True),
+#     ]
+# }
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

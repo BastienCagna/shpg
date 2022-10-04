@@ -15,6 +15,13 @@ class HTMLProvider:
     def to_html(self) -> str:
         raise NotImplementedError()
 
+    def __add__(self, other) -> list:
+        if isinstance(other, HTMLProvider):
+            return [self, other]
+        elif isinstance(other, (list, tuple)):
+            return [self] + other
+        raise ValueError("Added item should be a HTMLProvider or a list or tuple.")
+
 
 class HTMLSlot(HTMLProvider):
     def __init__(self, id: str = None) -> None:
@@ -49,10 +56,10 @@ def generate_html_tag(tagname, inner: str = None, **attributes) -> str:
         if key == "classname":
             key = "class"
         attributes_str += ' {}="{}"'.format(key, value)
-    if inner:
-        return '<{} {}>{}</{}>'.format(tagname, attributes_str, inner, tagname)
+    if inner is not None:
+        return '<{}{}>{}</{}>'.format(tagname, attributes_str if len(attributes_str) > 0 else "", inner, tagname)
     else:
-        return '<{} {} />'.format(tagname, attributes_str)
+        return '<{}{} />'.format(tagname, attributes_str if len(attributes_str) > 0 else "")
 
 
 def to_html(element) -> str:
@@ -149,7 +156,6 @@ class HTMLTag(HTMLProvider):
                     self.children[ic] = tag
                 elif isinstance(child, HTMLTag):
                     child.fill_slots(id, tag)
-
 
 def get_chidrens_tags(tag: HTMLTag) -> List[HTMLTag]:
     """Return all the children of a tag as a single 1D list of HTMLTag."""
@@ -287,20 +293,23 @@ class Table(HTMLTag):
                 data.append(list(self.data[k][i] for k in keys))
         else:
             data = self.data
-            keys = self.names
+            keys = self.names if self.names else None
 
-        html = "<thead><tr>"
-        for k in keys:
-            html += "<th>" + to_html(k) + "</th>"
-        html += "</tr></thead>"
-
-        html += "<tbody>"
-        for dt in data:
-            html += '<tr>'
-            for ik in range(len(keys)):
-                html += "<td>" + to_html(dt[ik]) + "</td>"
-            html += '</tr>'
-        html += "</tbody>"
+        html = ''
+        if keys:
+            html += "<thead><tr>"
+            for k in keys:
+                html += "<th>" + to_html(k) + "</th>"
+            html += "</tr></thead>"
+        
+        if data:
+            html += "<tbody>"
+            for dt in data:
+                html += '<tr>'
+                for ik in range(len(dt)):
+                    html += "<td>" + to_html(dt[ik]) + "</td>"
+                html += '</tr>'
+            html += "</tbody>"
         return html
 
     def size(self):

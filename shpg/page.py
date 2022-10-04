@@ -201,7 +201,7 @@ class Page(HTMLProvider):
         for sheet in self.stylesheet:
             if isinstance(sheet, StyleSheets):
                 style_html += '<link rel="stylesheet" href="{}">'.format(
-                    op.realpath(op.join(op.split(__file__)[0], '..', 'style', sheet.value)))
+                    op.realpath(op.join(op.split(__file__)[0], 'style', sheet.value)))
             else:
                 if not op.exists(sheet):
                     raise IOError(
