@@ -1,7 +1,12 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Static HTML Page Generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[![Build](https://github.com/BastienCagna/shpg/actions/workflows/python-package.yml/badge.svg)](https://github.com/BastienCagna/shpg/actions/workflows/python-package.yml)
+
+
+.. image:: https://github.com/BastienCagna/shpg/actions/workflows/python-package.yml/badge.svg?branch=main&event=push
+   :target: https://github.com/BastienCagna/shpg/actions
+   :alt: Github Actions Build Status
+
 
 Installation
 -------------
