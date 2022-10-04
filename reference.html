@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="search" title="Search" href="search.html" />
+<link rel="search" title="Search" href="search.html" /><link rel="prev" title="Tutorials &amp; Examples" href="tutorial.html" />
 
     <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-4.2.0, furo 2022.09.29"/>
-        <title>shpg package - Static HTML Page Generator</title>
+        <title>API Reference - Static HTML Page Generator</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
@@ -161,10 +161,10 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials &amp; Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">API Reference</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API Reference</a></li>
 </ul>
 
 </div>
@@ -199,17 +199,14 @@
           </label>
         </div>
         <article role="main">
-          <section id="shpg-package">
-<h1>shpg package<a class="headerlink" href="#shpg-package" title="Permalink to this headline">#</a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
-</section>
+          <section id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">#</a></h1>
 <section id="module-shpg.html">
 <span id="shpg-html-module"></span><h2>shpg.html module<a class="headerlink" href="#module-shpg.html" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.A">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">A</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#A"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.A" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Link" title="shpg.html.Link"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Link</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Link" title="shpg.html.Link"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Link</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -241,7 +238,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Div">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Div</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">children</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Div"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Div" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -273,7 +270,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.H1">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">H1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#H1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.H1" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Heading1" title="shpg.html.Heading1"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading1</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Heading1" title="shpg.html.Heading1"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading1</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -305,7 +302,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.H2">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">H2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#H2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.H2" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Heading2" title="shpg.html.Heading2"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading2</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Heading2" title="shpg.html.Heading2"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading2</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -337,7 +334,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.H3">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">H3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#H3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.H3" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Heading3" title="shpg.html.Heading3"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading3</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Heading3" title="shpg.html.Heading3"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading3</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -369,7 +366,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.H4">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">H4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#H4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.H4" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Heading4" title="shpg.html.Heading4"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading4</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Heading4" title="shpg.html.Heading4"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading4</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -401,7 +398,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.H5">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">H5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#H5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.H5" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Heading5" title="shpg.html.Heading5"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading5</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Heading5" title="shpg.html.Heading5"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading5</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -433,7 +430,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.H6">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">H6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#H6"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.H6" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Heading6" title="shpg.html.Heading6"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading6</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Heading6" title="shpg.html.Heading6"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Heading6</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -491,7 +488,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.HTMLSlot">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">HTMLSlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#HTMLSlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.HTMLSlot" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLProvider</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLProvider</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -500,7 +497,7 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#shpg.html.HTMLSlot.to_html" title="shpg.html.HTMLSlot.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="shpg.html#shpg.html.HTMLSlot.to_html" title="shpg.html.HTMLSlot.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a>()</p></td>
 <td><p>Return empty string as an unused slot is kind of ghost</p></td>
 </tr>
 </tbody>
@@ -516,8 +513,8 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.HTMLTag">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">HTMLTag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tagname</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">children</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#shpg.html.List" title="shpg.html.List"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">HTMLTag</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orphan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#HTMLTag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.HTMLTag" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLProvider</span></code></a></p>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">HTMLTag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tagname</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">children</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="shpg.html#shpg.html.List" title="shpg.html.List"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">HTMLTag</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orphan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#HTMLTag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.HTMLTag" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLProvider</span></code></a></p>
 <p>Basic class for all the HTML tags.
 Read more in the <span class="xref std std-ref">User Guide</span>.</p>
 <dl class="field-list simple">
@@ -543,19 +540,19 @@ instead as class is a reserved work in python.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#shpg.html.HTMLTag.append" title="shpg.html.HTMLTag.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(child)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="shpg.html#shpg.html.HTMLTag.append" title="shpg.html.HTMLTag.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(child)</p></td>
 <td><p>Add child element.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#shpg.html.HTMLTag.extend" title="shpg.html.HTMLTag.extend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code></a>(children)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="shpg.html#shpg.html.HTMLTag.extend" title="shpg.html.HTMLTag.extend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code></a>(children)</p></td>
 <td><p>Add several child elements.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#shpg.html.HTMLTag.fill_slots" title="shpg.html.HTMLTag.fill_slots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_slots</span></code></a>(id, tag)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="shpg.html#shpg.html.HTMLTag.fill_slots" title="shpg.html.HTMLTag.fill_slots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_slots</span></code></a>(id, tag)</p></td>
 <td><p>Replace HTMLSlots of given id by the given tag if all children.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#shpg.html.HTMLTag.inner_html" title="shpg.html.HTMLTag.inner_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="shpg.html#shpg.html.HTMLTag.inner_html" title="shpg.html.HTMLTag.inner_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code></a>()</p></td>
 <td><p>Render the inner HTML script.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#shpg.html.HTMLTag.to_html" title="shpg.html.HTMLTag.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="shpg.html#shpg.html.HTMLTag.to_html" title="shpg.html.HTMLTag.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a>()</p></td>
 <td><p>Render the full tag HTML script.</p></td>
 </tr>
 </tbody>
@@ -563,7 +560,7 @@ instead as class is a reserved work in python.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="shpg.html.HTMLTag.append">
-<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/shpg/html.html#HTMLTag.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.HTMLTag.append" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/shpg/html.html#HTMLTag.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.HTMLTag.append" title="Permalink to this definition">#</a></dt>
 <dd><p>Add child element.</p>
 </dd></dl>
 
@@ -575,7 +572,7 @@ instead as class is a reserved work in python.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="shpg.html.HTMLTag.fill_slots">
-<span class="sig-name descname"><span class="pre">fill_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#HTMLTag.fill_slots"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.HTMLTag.fill_slots" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">fill_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#HTMLTag.fill_slots"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.HTMLTag.fill_slots" title="Permalink to this definition">#</a></dt>
 <dd><p>Replace HTMLSlots of given id by the given tag if all children.</p>
 </dd></dl>
 
@@ -596,7 +593,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Heading1">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Heading1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Heading1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Heading1" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -628,7 +625,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Heading2">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Heading2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Heading2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Heading2" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -660,7 +657,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Heading3">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Heading3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Heading3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Heading3" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -692,7 +689,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Heading4">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Heading4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Heading4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Heading4" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -724,7 +721,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Heading5">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Heading5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Heading5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Heading5" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -756,7 +753,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Heading6">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Heading6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Heading6"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Heading6" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -788,7 +785,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Image">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Image" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -820,7 +817,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Img">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Img"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Img" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Image" title="shpg.html.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Image</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Image" title="shpg.html.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Image</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -852,7 +849,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Link">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Link" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -884,7 +881,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.List">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">List</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">children</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#List"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.List" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -893,10 +890,10 @@ instead as class is a reserved work in python.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#shpg.html.List.append" title="shpg.html.List.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(child)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="shpg.html#shpg.html.List.append" title="shpg.html.List.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(child)</p></td>
 <td><p>Add child element.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#shpg.html.List.extend" title="shpg.html.List.extend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code></a>(children)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="shpg.html#shpg.html.List.extend" title="shpg.html.List.extend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code></a>(children)</p></td>
 <td><p>Add several child elements.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_slots</span></code>(id, tag)</p></td>
@@ -928,7 +925,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.ListItem">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">ListItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">children</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#ListItem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.ListItem" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -960,7 +957,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.P">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">P</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#P"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.P" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Paragraph" title="shpg.html.Paragraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Paragraph</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Paragraph" title="shpg.html.Paragraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Paragraph</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -992,7 +989,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Paragraph">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Paragraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Paragraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Paragraph" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -1024,7 +1021,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Section">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">children</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Section"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Section" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -1056,7 +1053,7 @@ instead as class is a reserved work in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.html.Table">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">Table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Table" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -1065,16 +1062,16 @@ instead as class is a reserved work in python.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#shpg.html.Table.append" title="shpg.html.Table.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(row)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="shpg.html#shpg.html.Table.append" title="shpg.html.Table.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(row)</p></td>
 <td><p>Add child element.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code>(children)</p></td>
 <td><p>Add several child elements.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#shpg.html.Table.fill_slots" title="shpg.html.Table.fill_slots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_slots</span></code></a>(id, tag)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="shpg.html#shpg.html.Table.fill_slots" title="shpg.html.Table.fill_slots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_slots</span></code></a>(id, tag)</p></td>
 <td><p>Replace HTMLSlots of given id by the given tag if all children.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#shpg.html.Table.inner_html" title="shpg.html.Table.inner_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="shpg.html#shpg.html.Table.inner_html" title="shpg.html.Table.inner_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code></a>()</p></td>
 <td><p>Render the inner HTML script.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code>()</p></td>
@@ -1104,7 +1101,7 @@ instead as class is a reserved work in python.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="shpg.html.Table.fill_slots">
-<span class="sig-name descname"><span class="pre">fill_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Table.fill_slots"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Table.fill_slots" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">fill_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/html.html#Table.fill_slots"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.Table.fill_slots" title="Permalink to this definition">#</a></dt>
 <dd><p>Replace HTMLSlots of given id by the given tag if all children.</p>
 </dd></dl>
 
@@ -1129,7 +1126,7 @@ instead as class is a reserved work in python.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="shpg.html.get_chidrens_tags">
-<span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">get_chidrens_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#shpg.html.List" title="shpg.html.List"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/shpg/html.html#get_chidrens_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.get_chidrens_tags" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">shpg.html.</span></span><span class="sig-name descname"><span class="pre">get_chidrens_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shpg.html#shpg.html.List" title="shpg.html.List"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/shpg/html.html#get_chidrens_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.html.get_chidrens_tags" title="Permalink to this definition">#</a></dt>
 <dd><p>Return all the children of a tag as a single 1D list of HTMLTag.</p>
 </dd></dl>
 
@@ -1146,7 +1143,7 @@ provide the HTML content.</p>
 <span id="shpg-page-module"></span><h2>shpg.page module<a class="headerlink" href="#module-shpg.page" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.page.Book">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">Book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'Untitled</span> <span class="pre">page'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pages</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">footer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stylesheet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span> <span class="p"><span class="pre">|</span></span> <a class="reference internal" href="#shpg.page.StyleSheets" title="shpg.page.StyleSheets"><span class="pre">StyleSheets</span></a> <span class="p"><span class="pre">|</span></span> <span class="pre">list</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">StyleSheets.DEFAULT</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/page.html#Book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.Book" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">Book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'Untitled</span> <span class="pre">page'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pages</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">footer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stylesheet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span> <span class="p"><span class="pre">|</span></span> <a class="reference internal" href="shpg.html#shpg.page.StyleSheets" title="shpg.page.StyleSheets"><span class="pre">StyleSheets</span></a> <span class="p"><span class="pre">|</span></span> <span class="pre">list</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">StyleSheets.DEFAULT</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/page.html#Book"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.Book" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A book is a set of pages sharing header and footer.</p>
 <dl class="field-list simple">
@@ -1192,8 +1189,8 @@ at rendering time.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.page.LinkToPage">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">LinkToPage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#shpg.page.Page" title="shpg.page.Page"><span class="pre">shpg.page.Page</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/page.html#LinkToPage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.LinkToPage" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">LinkToPage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="shpg.html#shpg.page.Page" title="shpg.page.Page"><span class="pre">shpg.page.Page</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/page.html#LinkToPage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.LinkToPage" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -1214,7 +1211,7 @@ at rendering time.</p>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code>()</p></td>
 <td><p>Render the inner HTML script.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#shpg.page.LinkToPage.to_html" title="shpg.page.LinkToPage.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="shpg.html#shpg.page.LinkToPage.to_html" title="shpg.page.LinkToPage.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a>()</p></td>
 <td><p>Render the full tag HTML script.</p></td>
 </tr>
 </tbody>
@@ -1230,8 +1227,8 @@ at rendering time.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.page.Page">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">Page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'Untitled</span> <span class="pre">page'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stylesheet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span> <span class="p"><span class="pre">|</span></span> <a class="reference internal" href="#shpg.page.StyleSheets" title="shpg.page.StyleSheets"><span class="pre">StyleSheets</span></a> <span class="p"><span class="pre">|</span></span> <span class="pre">list</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">StyleSheets.DEFAULT</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/page.html#Page"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.Page" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLProvider</span></code></a></p>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">Page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'Untitled</span> <span class="pre">page'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stylesheet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span> <span class="p"><span class="pre">|</span></span> <a class="reference internal" href="shpg.html#shpg.page.StyleSheets" title="shpg.page.StyleSheets"><span class="pre">StyleSheets</span></a> <span class="p"><span class="pre">|</span></span> <span class="pre">list</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">StyleSheets.DEFAULT</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/page.html#Page"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.Page" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLProvider</span></code></a></p>
 <p>A Page can generate the HTML script of a full web page.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1278,7 +1275,7 @@ at rendering time.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="shpg.page.Page.save">
-<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><span class="pre">shpg.html.HTMLProvider</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/page.html#Page.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.Page.save" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shpg.html#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><span class="pre">shpg.html.HTMLProvider</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/page.html#Page.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.Page.save" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1325,12 +1322,12 @@ at rendering time.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="shpg.page.create_tmp_tag">
-<span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">create_tmp_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#shpg.page.TempTagType" title="shpg.page.TempTagType"><span class="pre">shpg.page.TempTagType</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/page.html#create_tmp_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.create_tmp_tag" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">create_tmp_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="shpg.html#shpg.page.TempTagType" title="shpg.page.TempTagType"><span class="pre">shpg.page.TempTagType</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/page.html#create_tmp_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.create_tmp_tag" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="shpg.page.decode_tmp_tags">
-<span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">decode_tmp_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><span class="pre">shpg.html.HTMLProvider</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/shpg/page.html#decode_tmp_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.decode_tmp_tags" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">decode_tmp_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shpg.html#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><span class="pre">shpg.html.HTMLProvider</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/shpg/page.html#decode_tmp_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.decode_tmp_tags" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -1362,7 +1359,7 @@ at rendering time.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="shpg.page.generate_tag">
-<span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">generate_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serialized_tmp_tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><span class="pre">shpg.html.HTMLProvider</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/shpg/page.html#generate_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.generate_tag" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">shpg.page.</span></span><span class="sig-name descname"><span class="pre">generate_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serialized_tmp_tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shpg.html#shpg.html.HTMLProvider" title="shpg.html.HTMLProvider"><span class="pre">shpg.html.HTMLProvider</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/shpg/page.html#generate_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.page.generate_tag" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -1377,7 +1374,7 @@ at rendering time.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.simple.SimpleDictVTable">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.simple.</span></span><span class="sig-name descname"><span class="pre">SimpleDictVTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/simple.html#SimpleDictVTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.simple.SimpleDictVTable" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p>Convert dict to a HTML table with one key-item pair by line.</p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
@@ -1396,7 +1393,7 @@ at rendering time.</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_slots</span></code>(id, tag)</p></td>
 <td><p>Replace HTMLSlots of given id by the given tag if all children.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#shpg.simple.SimpleDictVTable.inner_html" title="shpg.simple.SimpleDictVTable.inner_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="shpg.html#shpg.simple.SimpleDictVTable.inner_html" title="shpg.simple.SimpleDictVTable.inner_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code></a>()</p></td>
 <td><p>Render the inner HTML script.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code>()</p></td>
@@ -1416,7 +1413,7 @@ at rendering time.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.simple.SimpleFooter">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.simple.</span></span><span class="sig-name descname"><span class="pre">SimpleFooter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">links_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/simple.html#SimpleFooter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.simple.SimpleFooter" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Div" title="shpg.html.Div"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Div</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Div" title="shpg.html.Div"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Div</span></code></a></p>
 <p>A footer with a message and site map.</p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
@@ -1449,7 +1446,7 @@ at rendering time.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.simple.SimpleHMenu">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.simple.</span></span><span class="sig-name descname"><span class="pre">SimpleHMenu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/simple.html#SimpleHMenu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.simple.SimpleHMenu" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Div" title="shpg.html.Div"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Div</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Div" title="shpg.html.Div"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Div</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -1458,7 +1455,7 @@ at rendering time.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#shpg.simple.SimpleHMenu.append" title="shpg.simple.SimpleHMenu.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(k, item)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="shpg.html#shpg.simple.SimpleHMenu.append" title="shpg.simple.SimpleHMenu.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(k, item)</p></td>
 <td><p>Add child element.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend</span></code>(children)</p></td>
@@ -1467,7 +1464,7 @@ at rendering time.</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_slots</span></code>(id, tag)</p></td>
 <td><p>Replace HTMLSlots of given id by the given tag if all children.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#shpg.simple.SimpleHMenu.inner_html" title="shpg.simple.SimpleHMenu.inner_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="shpg.html#shpg.simple.SimpleHMenu.inner_html" title="shpg.simple.SimpleHMenu.inner_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code></a>()</p></td>
 <td><p>Render the inner HTML script.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code>()</p></td>
@@ -1493,7 +1490,7 @@ at rendering time.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.simple.SimpleHeader">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.simple.</span></span><span class="sig-name descname"><span class="pre">SimpleHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">menu_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/simple.html#SimpleHeader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.simple.SimpleHeader" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Div" title="shpg.html.Div"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Div</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Div" title="shpg.html.Div"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Div</span></code></a></p>
 <p>A header with a title and a menu bar.</p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
@@ -1526,7 +1523,7 @@ at rendering time.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.simple.SimplePage">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.simple.</span></span><span class="sig-name descname"><span class="pre">SimplePage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'Untitled</span> <span class="pre">page'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">menu</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">footer_msg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stylesheet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span> <span class="p"><span class="pre">|</span></span> <span class="pre">StyleSheets</span> <span class="p"><span class="pre">|</span></span> <span class="pre">list</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">StyleSheets.DEFAULT</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/simple.html#SimplePage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.simple.SimplePage" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.page.Page" title="shpg.page.Page"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.page.Page</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.page.Page" title="shpg.page.Page"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.page.Page</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -1560,7 +1557,7 @@ at rendering time.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.simple.SimpleSiteMap">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.simple.</span></span><span class="sig-name descname"><span class="pre">SimpleSiteMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">links_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/simple.html#SimpleSiteMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.simple.SimpleSiteMap" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.Div" title="shpg.html.Div"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Div</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.Div" title="shpg.html.Div"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.Div</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -1578,7 +1575,7 @@ at rendering time.</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_slots</span></code>(id, tag)</p></td>
 <td><p>Replace HTMLSlots of given id by the given tag if all children.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#shpg.simple.SimpleSiteMap.inner_html" title="shpg.simple.SimpleSiteMap.inner_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="shpg.html#shpg.simple.SimpleSiteMap.inner_html" title="shpg.simple.SimpleSiteMap.inner_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner_html</span></code></a>()</p></td>
 <td><p>Render the inner HTML script.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code>()</p></td>
@@ -1597,8 +1594,8 @@ at rendering time.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="shpg.simple.SimpleToolTip">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.simple.</span></span><span class="sig-name descname"><span class="pre">SimpleToolTip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tooltip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/simple.html#SimpleToolTip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.simple.SimpleToolTip" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shpg.simple.</span></span><span class="sig-name descname"><span class="pre">SimpleToolTip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tooltip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><span class="pre">shpg.html.HTMLTag</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/shpg/simple.html#SimpleToolTip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#shpg.simple.SimpleToolTip" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shpg.html#shpg.html.HTMLTag" title="shpg.html.HTMLTag"><code class="xref py py-class docutils literal notranslate"><span class="pre">shpg.html.HTMLTag</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper longtable docutils container">
 <table class="longtable docutils align-default">
@@ -1639,7 +1636,17 @@ at rendering time.</p>
         
         <div class="related-pages">
           
-          
+          <a class="prev-page" href="tutorial.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Tutorials &amp; Examples</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -1672,8 +1679,7 @@ at rendering time.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">shpg package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#">API Reference</a><ul>
 <li><a class="reference internal" href="#module-shpg.html">shpg.html module</a></li>
 <li><a class="reference internal" href="#module-shpg.page">shpg.page module</a></li>
 <li><a class="reference internal" href="#module-shpg.simple">shpg.simple module</a></li>

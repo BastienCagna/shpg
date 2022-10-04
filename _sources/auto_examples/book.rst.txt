@@ -73,24 +73,25 @@ Setup header and footer
 Add content to the main page
 ##############################################################################
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-44
+.. GENERATED FROM PYTHON SOURCE LINES 37-45
 
 .. code-block:: default
 
     book.index.title = 'Example website | Home'
     book.index.content.append(header)
     book.index.content.append(shpg.Heading2("Welcome Home!"))
-    book.index.content.append(shpg.Paragraph("Follow this link to go to " + subpage.link("sub page")))
+    book.index.content.append(shpg.Paragraph(
+        "Follow this link to go to " + subpage.link("sub page")))
     book.index.content.append(footer)
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-47
+.. GENERATED FROM PYTHON SOURCE LINES 46-48
 
 Add content to the second page
 ##############################################################################
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-53
+.. GENERATED FROM PYTHON SOURCE LINES 48-54
 
 .. code-block:: default
 
@@ -101,16 +102,17 @@ Add content to the second page
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-56
+.. GENERATED FROM PYTHON SOURCE LINES 55-57
 
 Render
 ##############################################################################
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-56
+.. GENERATED FROM PYTHON SOURCE LINES 57-58
 
 .. code-block:: default
 
     book.save("/tmp/example_book.html", portable=False)
+
 
 .. rst-class:: sphx-glr-timing
 

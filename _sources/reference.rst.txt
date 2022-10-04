@@ -1,8 +1,5 @@
-shpg package
-============
-
-Submodules
-----------
+API Reference
+=============
 
 shpg.html module
 ----------------
