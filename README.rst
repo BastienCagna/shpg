@@ -7,6 +7,8 @@ Static HTML Page Generator
    :target: https://github.com/BastienCagna/shpg/actions
    :alt: Github Actions Build Status
 
+.. image:: https://badge.fury.io/py/shpg.svg
+    :target: https://badge.fury.io/py/shpg
 
 Installation
 -------------
