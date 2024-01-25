@@ -89,6 +89,8 @@ class HTMLTag(HTMLProvider):
     """ Basic class for all the HTML tags.
     Read more in the :ref:`User Guide <htmltag>`.
 
+    "class" attribute must be replaced by "classname".
+
     Parameters
     ----------
     tagname : float, default=None
@@ -287,7 +289,7 @@ class Table(HTMLTag):
 
     def inner_html(self) -> str:
         if isinstance(self.data, dict):
-            keys = self.data.keys() if not self.names else self.names
+            keys = list(self.data.keys()) if not self.names else self.names
             data = []
             for i in range(len(self.data[keys[0]])):
                 data.append(list(self.data[k][i] for k in keys))

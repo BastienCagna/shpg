@@ -74,7 +74,7 @@ def make_script_portable(html: str, abs_target_path: str, rel_target_path: str) 
                 i += 1
             new_abs_path = op.join(abs_target_path, fname)
             new_rel_path = op.join(rel_target_path, fname)
-
+            
             if op.exists(f):
                 shutil.copy(f, new_abs_path)
 
@@ -174,6 +174,7 @@ class Page(HTMLProvider):
         content: HTMLTag | list of HTMLTag
         blocks: dict
         stylesheet: str | StyleSheets | list of str | list of StyleSheets
+            HTML Stylesheet aims to be a .css file or a CSS string content.
     """
 
     def __init__(self, title: str = DEFAULT_TITLE, content=None, blocks={},
@@ -203,18 +204,18 @@ class Page(HTMLProvider):
                 style_html += '<link rel="stylesheet" href="{}">'.format(
                     op.realpath(op.join(op.split(__file__)[0], 'style', sheet.value)))
             else:
-                if not op.exists(sheet):
-                    raise IOError(
-                        "Cannot find custom stylesheet: {}".format(sheet))
-                style_html += '<link rel="stylesheet" href="{}">'.format(sheet)
+                if op.exists(sheet):
+                    style_html += f'<link rel="stylesheet" href="{sheet}">'
+                else:
+                    style_html += f'<style>{sheet}</style>'
+                
 
         if isinstance(self.content, list):
             body = Div(*self.content, classname="page").to_html()
         else:
             body = self.content.to_html()
 
-        html = '<html><head><title>{}</title>{}</head><body>{}</body>'.format(
-            self.title, style_html, body)
+        html = f'<html><head><title>{self.title}</title>{style_html}</head><body>{body}</body>'
         # TODO: process template to input data
         return html
 
@@ -266,7 +267,7 @@ class Page(HTMLProvider):
                 index_dir = create_index_dir(parent_dir)
             content_dir = op.join(index_dir, CONTENT_DIRNAME)
             makedirs(content_dir, exist_ok=True)
-            make_script_portable(html, op.abspath(
+            html = make_script_portable(html, op.abspath(
                 content_dir), op.relpath(content_dir, parent_dir))
 
         with open(filename, 'w') as f:
@@ -293,6 +294,7 @@ class Book:
             Set of string id and HTMLTag to replace the HTMLSlot by those tag
             at rendering time.
         stylesheet: str | StyleSheets | list of str | list of StyleSheet
+            see Page class.
     """
 
     def __init__(self, title: str = DEFAULT_TITLE, index=None, pages=[],
