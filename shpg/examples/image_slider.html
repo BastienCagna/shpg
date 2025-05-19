@@ -1,0 +1,68 @@
+<html>
+<head>
+    <script type="text/javascript" src="../js/components.js"></script>
+    <style>
+        body { background-color: black;} 
+        pre { 
+            background-color: rgb(67, 73, 73);
+            padding: 1em;
+        }
+
+        .image-slider{
+            position: relative;
+            float: left;
+            color: yellow;
+            font-family: sans-serif;
+        }
+
+        /* .image-slider-canvas{
+        } */
+        .image-slider-title {
+            position: absolute;
+            padding: .2em .3em;
+            left: 0;
+            top: 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 10pt;
+            color: yellow;
+            background-color: black;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div style="display: flex" id="sub-0"></div>
+        <div style="display: flex" id="sub-1"></div>
+        <div style="display: flex" id="sub-2"></div>
+    </div>
+
+    <script>
+        const subjects = ["0", "1", "2"]
+        let features = []
+
+        const updateRatio = (fromId, ratio) => {
+            for(const feature of features) {
+                if(feature.id !== fromId) {
+                    feature.setRatio(ratio)
+                }
+            }
+        }
+
+        let row;
+        for(const sub of subjects) {
+            const sid = `sub-${sub}`
+            row = document.getElementById(sid);
+            row.innerHTML += `<div id="${sid}""></div>`
+            features.push(new ImgSlider(
+                document.getElementById(sid),
+                `/network/lustre/iss02/cati/raw/prod/cati/DatabaseQualiCATI_20190222/MotoHD/dataProcessing/cati-tracto/010179MHU/quality_check/metric_FA_and_MNI_template_z.png`,
+                `/network/lustre/iss02/cati/raw/prod/cati/DatabaseQualiCATI_20190222/MotoHD/dataProcessing/cati-tracto/010179MHU/quality_check/metric_FWFms_and_MNI_template_z.png`,
+                "FA",
+                "Free Water",
+                2048/2, 256/2, null, updateRatio
+            ))
+        }
+    </script>
+</body>
+</html>

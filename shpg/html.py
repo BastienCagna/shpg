@@ -89,6 +89,8 @@ class HTMLTag(HTMLProvider):
     """ Basic class for all the HTML tags.
     Read more in the :ref:`User Guide <htmltag>`.
 
+    "class" attribute must be replaced by "classname".
+
     Parameters
     ----------
     tagname : float, default=None
@@ -222,52 +224,46 @@ class Heading6(HTMLTag):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__('h6', text, **attributes)
 
-
 class H6(Heading6):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__(text, **attributes)
-
 
 class Paragraph(HTMLTag):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__('p', text, **attributes)
 
-
 class P(Paragraph):
     def __init__(self, text: str, **attributes) -> None:
         super().__init__(text, **attributes)
-
 
 class Link(HTMLTag):
     def __init__(self, url: str, text: str, **attributes) -> None:
         super().__init__('a', text, **attributes)
         self.attributes['href'] = url
 
-
 class A(Link):
     def __init__(self, url: str, text: str, **attributes) -> None:
         super().__init__(url, text, **attributes)
-
 
 class Image(HTMLTag):
     def __init__(self, img_path: str, **attributes) -> None:
         super().__init__('img', src=img_path, **attributes, orphan=True)
 
-
 class Img(Image):
     def __init__(self, img_path: str, **attributes) -> None:
         super().__init__(img_path, **attributes)
 
+class Pre(HTMLTag):
+    def __init__(self, *children, **attributes) -> None:
+        super().__init__('pre', *children, **attributes)
 
 class Div(HTMLTag):
     def __init__(self, *children, **attributes) -> None:
         super().__init__('div', *children, **attributes)
 
-
 class Section(HTMLTag):
     def __init__(self, *children, **attributes) -> None:
         super().__init__('section', *children, **attributes)
-
 
 class Table(HTMLTag):
     def __init__(self, data=None, names=None, **attributes) -> None:
@@ -287,7 +283,7 @@ class Table(HTMLTag):
 
     def inner_html(self) -> str:
         if isinstance(self.data, dict):
-            keys = self.data.keys() if not self.names else self.names
+            keys = list(self.data.keys()) if not self.names else self.names
             data = []
             for i in range(len(self.data[keys[0]])):
                 data.append(list(self.data[k][i] for k in keys))
